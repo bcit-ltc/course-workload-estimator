@@ -1,0 +1,208 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap');
+
+html,
+body {
+    min-height: 100vh;
+}
+
+body {
+    margin: 0;
+    padding: 0 !important;
+}
+
+h1 {
+    font-family: 'Nunito Sans', Arial, sans-serif !important;
+    font-weight: bold;
+}
+
+*:not(h1) {
+    font-family: 'Nunito Sans', Arial, sans-serif !important;
+}
+
+p,
+span,
+.MuiOutlinedInput-root,
+.MuiDataGrid-main {
+    color: #003c71 !important;
+}
+
+.MuiRadio-root {
+    align-self: start !important;
+}
+
+.MuiDataGrid-columnHeader,
+.MuiDataGrid-cell {
+    padding: 0 5px !important;
+}
+
+.MuiDataGrid-columnHeaderTitle {
+    font-weight: 800 !important;
+}
+
+.MuiDataGrid-columnHeaders,
+.MuiTableContainer-root th {
+    font-weight: bold;
+    background-color: rgb(0 126 255 / 10%);
+}
+
+label,
+legend {
+    color: #5a5a5a !important;
+}
+
+.course-activities {
+    margin: 1em 0 !important;
+}
+
+.accordion-summary-background {
+    background-color: #f8f9fa !important;
+}
+
+.form-control-label {
+    margin: 5px 0 !important;
+    width: 100% !important;
+}
+
+.form-control-label:has(>.Mui-checked) {
+    border: 2px solid #00a69d !important;
+    border-radius: 4px;
+    box-shadow: 2px 2px #767676;
+}
+
+.form-control-label:hover {
+    border: 2px solid #602aa9 !important;
+    border-radius: 4px;
+}
+
+.form-group-toggle {
+    margin: 0.5em 0 !important;
+}
+
+.form-group-toggle .MuiTextField-root {
+    margin-top: 0.2em;
+    margin-bottom: 0.5em;
+    margin-left: 2em;
+}
+
+.calculator-text-field>div {
+    margin: 1em 0;
+}
+
+.custom-textfield {
+    width: 100%;
+}
+
+.MuiFormHelperText-root.Mui-error {
+    color: red !important;
+}
+
+.custom-checkbox {
+    margin: 0 0 0.5em !important;
+}
+
+.custom-checkbox label {
+    left: -12px;
+    position: relative;
+}
+
+.help-icon {
+    height: 1.8em !important;
+    cursor: pointer;
+}
+
+.collapse-content {
+    background-color: #d3dcdc;
+    border-radius: 4px;
+    margin-top: 5px;
+    width: calc(100% - 23px);
+}
+
+.collapse-content p {
+    margin: 0.5rem !important;
+}
+
+.summary-table {
+    height: 100%;
+    width: 100%;
+    margin: 1em 0 !important;
+}
+
+.MuiDataGrid-columnSeparator {
+    display: none !important;
+}
+
+.summary-table-header {
+    white-space: normal;
+    line-height: 1.2;
+    text-align: center;
+}
+
+.MuiDataGrid-cellContent {
+    overflow-wrap: break-word;
+}
+
+.course-activity-container {
+    animation: fadein 1s;
+}
+
+.course-activity-container {
+    animation: fadein 1s;
+    margin-top: 0.5em;
+}
+
+.recharts-responsive-container {
+    margin-top: 1.5em;
+}
+
+.recharts-default-legend>li {
+    line-height: 1.5em;
+}
+
+#root {
+    min-height: 100vh;
+}
+
+#footer {
+    margin-top: 15px;
+    background-color: #f8f9fa;
+}
+
+#footer p {
+    margin: 0.3em 0.5em;
+}
+
+.cpt-contact,
+.ltc-link {
+    padding-top: 0 !important;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    opacity: 1;
+}
+
+.print-only {
+    display: none;
+}
+
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@media print {
+
+    .no-print,
+    .no-print * {
+        display: none !important;
+    }
+
+    .print-only {
+        display: block;
+    }
+}
