@@ -1,12 +1,9 @@
-version: "3.9"
 services:
-  course-workload-estimator:
-    image: course-workload-estimator
+  app:
+    image: ${APP_NAME}
     build:
-      context: .
-      dockerfile: Dockerfile
       target: release
     volumes:
       - ./deploy/base/nginx.conf:/etc/nginx/conf.d/nginx.conf
     ports:
-      - '8080:8080'
+      - 8080:8080
