@@ -3,3 +3,6 @@ dist
 package-lock.json
 .DS_Store
 .vscode
+**/secrets
+app-chart
+app-chart/**
