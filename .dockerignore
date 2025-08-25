@@ -33,9 +33,10 @@ coverage
 docker-compose.yml
 
 # -----------------
-# Kubernetes
+# Kubernetes / Helm
 # -----------------
 charts/**/.tgz
+.helmignore
 
 # -----------------
 # Secrets / Env
@@ -45,11 +46,12 @@ charts/**/.tgz
 !.env.example   # still allow the example to be copied if you want
 
 # -----------------
-# Git
+# Git / GitHub
 # -----------------
 .git
 .gitignore
 .gitattributes
+.github/
 
 # -----------------
 # Locally-retrieved app chart
