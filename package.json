@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@issues.ltc.bcit.ca:web-apps/course-workload-estimator.git"
+    "url": "git@github.com:bcit-ltc/course-workload-estimator.git"
   },
   "keywords": [],
   "author": "arolos@bcit.ca",
