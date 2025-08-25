@@ -1,0 +1,63 @@
+# Common Helm ignore patterns (used to speed up local repo loading with `skaffold dev`)
+# -----------------
+# OS / Editor Junk
+# -----------------
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*.bak
+*.tmp
+
+# IDE settings
+.idea/
+.vscode/
+*.code-workspace
+
+# -----------------
+# VCS
+# -----------------
+.git/
+.gitignore
+.gitattributes
+.github/
+
+# -----------------
+# Node.js / App build
+# -----------------
+node_modules/
+dist/
+build/
+out/
+coverage/
+.nyc_output/
+
+# -----------------
+# Docker
+# -----------------
+.docker/
+docker-compose.override.yml
+docker-compose.local.yml
+
+# -----------------
+# Python
+# -----------------
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+
+# -----------------
+# Helm packaging artifacts
+# -----------------
+*.tgz
+*.zip
+*.tar.gz
+*.lock
+
+# -----------------
+# App-specific
+# -----------------
+docs/
+test/
+tests/

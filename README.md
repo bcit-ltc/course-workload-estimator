@@ -1,6 +1,6 @@
 # Course Workload Estimator
 
-Course Workload Estimator - a time calculator for instructors to estimate how many hours of work students might be expected to spend on a course.
+A time calculator for instructors to estimate how many hours of work students might be expected to spend on a course.
 
 ## Development
 

@@ -1,4 +1,4 @@
-FROM node:18-alpine3.18 as builder
+FROM node:24-slim AS builder
 
 WORKDIR /app
 
@@ -24,9 +24,10 @@ COPY --from=builder /app/dist ./
 
 ## Release/production
 
-FROM nginxinc/nginx-unprivileged AS release
+FROM nginxinc/nginx-unprivileged:alpine3.22 AS release
 
-LABEL maintainer courseproduction@bcit.ca
+LABEL maintainer="courseproduction@bcit.ca"
+LABEL org.opencontainers.image.description="A time calculator for instructors to estimate how many hours of work students might be expected to spend on a course."
 
 WORKDIR /usr/share/nginx/html
 
