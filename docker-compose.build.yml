@@ -1,0 +1,11 @@
+services:
+  course-workload-estimator:
+    image: course-workload-estimator
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: release
+    volumes:
+      - ./nginx.conf:/etc/nginx/conf.d/nginx.conf
+    ports:
+      - '8080:8080'
