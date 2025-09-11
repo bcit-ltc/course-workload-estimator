@@ -1,15 +1,19 @@
 {
   "name": "course-workload-estimator",
   "version": "1.0.0",
-  "description": "Estimate the total course workload for students to complete the course",
+  "description": "A time calculator to estimate the number of hours of work students might be expected to spend completing coursework.",
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --mode development --open --hot --host 0.0.0.0 --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:bcit-ltc/course-workload-estimator.git"
+  },
   "keywords": [],
   "author": "arolos@bcit.ca",
-  "license": "ISC",
+  "license": "MPL-2.0",
   "devDependencies": {
     "@babel/cli": "^7.23.0",
     "@babel/core": "^7.23.0",
