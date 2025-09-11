@@ -1,21 +1,25 @@
 # Course Workload Estimator
 
-Course Workload Estimator - a time calculator for instructors to estimate how many hours of work students might be expected to spend on a course.
+A time calculator to estimate the number of hours of work students might be expected to spend completing coursework.
 
 ## Development
 
-Run the project using Docker. With live-reload, use command:
+Run the project using Docker:
 
-    ```bash
-    docker compose up --build
-    ```
+```bash
+docker compose up
+```
 
 and open `localhost:3000`.
 
-Use build file from `/dist` folder:
+## Deployment
 
-    ```
-    docker-compose -f docker-compose.build.yml up --build
-    ```
+Use the build files from `/dist`.
 
-and open `localhost:8080`.
+## License
+
+Mozilla Public License 2.0
+
+## About
+
+Developed in 🇨🇦 Canada at [BCIT's](https://www.bcit.ca/) [Learning and Teaching Centre](https://www.bcit.ca/learning-teaching-centre/). [Contact Us](mailto:courseproduction@bcit.ca).

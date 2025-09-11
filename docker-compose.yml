@@ -1,9 +1,10 @@
+name: ${APP_NAME}
+
 services:
-  course-workload-estimator:
-    image: course-workload-estimator
+
+  app:
+    image: ${APP_NAME}
     build:
-      context: .
-      dockerfile: Dockerfile
       target: builder
     command: npm run start
     volumes:
@@ -12,5 +13,7 @@ services:
     ports:
       - 3000:3000
     environment:
+      - DEBUG=true
+      - CI=false
       - CHOKIDAR_USEPOLLING=true
       - WATCHPACK_POLLING=true
