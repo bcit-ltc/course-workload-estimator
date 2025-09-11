@@ -4,13 +4,11 @@ A time calculator to estimate the number of hours of work students might be expe
 
 ## Development
 
-Run the project using Docker:
+Run the project using Docker and then open `localhost:3000` in a browser.
 
 ```bash
 docker compose up
 ```
-
-and open `localhost:3000`.
 
 ## Deployment
 

@@ -1,9 +1,9 @@
-name: ${APP_NAME}
+name: course-workload-estimator
 
 services:
 
   app:
-    image: ${APP_NAME}
+    image: course-workload-estimator
     build:
       target: builder
     command: npm run start
@@ -11,7 +11,7 @@ services:
       - ./src:/app/src
       - ./public:/app/public
     ports:
-      - 3000:3000
+      - "3000:3000"
     environment:
       - DEBUG=true
       - CI=false
