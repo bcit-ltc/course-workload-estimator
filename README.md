@@ -1,6 +1,6 @@
 # Course Workload Estimator
 
-A time calculator to estimate the number of hours of work students might be expected to spend completing coursework.
+A time calculator to estimate the number of hours of work learners might be expected to spend completing coursework.
 
 ## Development
 
