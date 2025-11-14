@@ -26,9 +26,10 @@ COPY --from=builder /app/dist ./
 ## Release
 FROM nginxinc/nginx-unprivileged:alpine3.22-perl
 
-LABEL maintainer = courseproduction@bcit.ca
-LABEL org.opencontainers.image.source = "https://github.com/bcit-ltc/course-workload-estimator"
+LABEL maintainer=courseproduction@bcit.ca
+LABEL org.opencontainers.image.source="https://github.com/bcit-ltc/course-workload-estimator"
 
 WORKDIR /usr/share/nginx/html
 
+COPY conf.d/default.conf /etc/nginx/conf.d/default.conf
 COPY --from=cleaner /usr/share/nginx/html/ ./

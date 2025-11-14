@@ -1,3 +1,4 @@
+<!-- SPDX-License-Identifier: MPL-2.0 -->
 # Course Workload Estimator
 
 A time calculator to estimate the number of hours of work learners might be expected to spend completing coursework.
