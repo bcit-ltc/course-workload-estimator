@@ -1,4 +1,4 @@
-name: course-workload-estimator
+name: ${APP_NAME:-course-workload-estimator}
 
 services:
 
