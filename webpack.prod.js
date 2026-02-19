@@ -40,7 +40,8 @@ module.exports = {
         }),
         new CopyPlugin({
             patterns: [
-                { from: './public/favicon.ico', to: 'favicon.ico' }
+                { from: './public/favicon.ico', to: 'favicon.ico' },
+                { from: './src/assets/bcit_rev.png', to: 'bcit_rev.png' }
             ]
         }),
         new CompressionPlugin({

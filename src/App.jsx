@@ -31,6 +31,8 @@ import Summary from './components/Summary';
 import logo from './assets/bcit_rev.png';
 import Link from '@mui/material/Link';
 
+const LOGO_SRC = process.env.NODE_ENV === 'production' ? '/bcit_rev.png' : logo;
+
 let theme = createTheme({
     breakpoints: {
         values: {
@@ -131,7 +133,7 @@ const App = () => {
             <Box display="flex" flexDirection="column" minHeight="100vh">
                 <AppBar position="static" className="no-print" sx={{ bgcolor: "#003c71", height: '80px', paddingTop: '8px', paddingBottom: '8px' }}>
                     <Toolbar sx={{ width: { xs: 'auto', sm: 'auto', md: 'auto', lg: 'auto', xl: '1487px' }, margin: { xl: '0 auto' }, padding: { xl: '0' } }}>
-                        <Box component="img" alt="BCIT logo" src={logo} sx={{ height: '50px', marginRight: '1em', maxHeight: { xs: 50, xl: 50 } }} />
+                        <Box component="img" alt="BCIT logo" src={LOGO_SRC} sx={{ height: '50px', marginRight: '1em', maxHeight: { xs: 50, xl: 50 } }} />
                         <Typography variant="h1" sx={{ flexGrow: 1 }}>
                             Course Workload Estimator
                         </Typography>
