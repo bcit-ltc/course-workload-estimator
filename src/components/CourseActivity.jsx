@@ -24,14 +24,12 @@ export default function CourseActivity(props) {
     const [s_termHours, set_s_termHours] = useState(0);
     const [a_weeklyHours, set_a_weeklyHours] = useState(0);
     const [a_termHours, set_a_termHours] = useState(0);
-    const [activityInputDetails, setActivityInputDetails] = useState({});
     const activityProps = {
         ...{ updateActivityName: setActivityName },
         ...{ update_s_weeklyHours: set_s_weeklyHours },
         ...{ update_s_termHours: set_s_termHours },
         ...{ update_a_weeklyHours: set_a_weeklyHours },
         ...{ update_a_termHours: set_a_termHours },
-        ...{ reportInputDetails: setActivityInputDetails },
     };
 
     const renderCalculator = () => {
@@ -102,20 +100,23 @@ export default function CourseActivity(props) {
                 const componentKeys = Object.keys(components);
                 const component = componentKeys[props.componentIndex] || 'Unknown';
                 const activity = components[component]?.[props.activityIndex] || 'Unknown';
-                const propsToSend = {
+                const hasCustomName = activityName && String(activityName).trim() ? 'yes' : 'no';
+                const payload = {
                     component,
                     activity,
-                    activity_name: activityName || 'Unnamed',
+                    has_custom_name: hasCustomName,
                     hours_sync_weekly: String(s_weeklyHours),
                     hours_sync_term: String(s_termHours),
                     hours_async_weekly: String(a_weeklyHours),
                     hours_async_term: String(a_termHours),
                 };
-                if (Object.keys(activityInputDetails).length > 0) {
-                    propsToSend.inputs = JSON.stringify(activityInputDetails);
-                }
-                window.plausible('Activity Added', { props: propsToSend });
-                console.log('Activity Added (Plausible sent):', { event: 'Activity Added', props: propsToSend, inputDetails: activityInputDetails });
+                window.plausible('Activity Added', {
+                    props: {
+                        ...payload,
+                        activity_custom_name: `${activity} · ${hasCustomName}`,
+                        event_payload: JSON.stringify(payload),
+                    },
+                });
             }
         } catch (error) {
             console.error("Error in addActivity", error);
