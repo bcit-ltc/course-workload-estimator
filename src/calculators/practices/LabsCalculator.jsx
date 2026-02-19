@@ -21,6 +21,13 @@ export default function LabsCalculator(props) {
         props.update_s_termHours(sTermHours);
         props.update_a_termHours(aTermHours);
         props.updateActivityName(activityName);
+        props.reportInputDetails?.({
+            'Activity Name (Optional)': activityName,
+            'Number of Sessions Scheduled per Course': sessionQuantity,
+            'Preparation Time per Session (Hours)': sessionPrepHours,
+            'Scheduled Session Length (Hours)': sessionLength,
+            'Post-Activity Reporting Time per Session (Hrs)': postSessionHours,
+        });
     }, [activityName, sessionQuantity, sessionPrepHours, sessionLength, postSessionHours]);
 
     return (

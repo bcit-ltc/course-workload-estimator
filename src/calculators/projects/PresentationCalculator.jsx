@@ -18,6 +18,11 @@ export default function PresentationCalculator(props) {
 
         props.update_a_termHours(aTermHours);
         props.updateActivityName(activityName);
+        props.reportInputDetails?.({
+            'Activity Name (Optional)': activityName,
+            'Number of Presentations per Course': presentationQuantity,
+            'Prep. Time per Presentation (Hrs)': prepTime,
+        });
     }, [activityName, presentationQuantity, prepTime]);
 
     return (

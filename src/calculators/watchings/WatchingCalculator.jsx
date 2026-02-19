@@ -23,6 +23,12 @@ export default function WatchingCalculator(props) {
         }
 
         props.updateActivityName(activityName);
+        props.reportInputDetails?.({
+            'Instructional Media Name (Optional)': activityName,
+            'Hours per Instructional Video/Podcast': videoLength,
+            'Instructional Video/Podcast per Course': videoQuantity,
+            'Synchronous Time': synchronous,
+        });
     }, [activityName, videoLength, videoQuantity, synchronous]);
 
     return (

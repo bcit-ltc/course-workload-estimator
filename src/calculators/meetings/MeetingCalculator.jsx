@@ -23,6 +23,11 @@ export default function MeetingCalculator(props) {
             props.update_s_termHours(sTermHours);
         }
         props.updateActivityName(activityName);
+        props.reportInputDetails?.({
+            'Meeting Name (Optional)': activityName,
+            ['Meetings per ' + meetingType]: meetingQuantity,
+            'Meetings length (hours)': meetingLength,
+        });
     }, [activityName, meetingType, meetingQuantity, meetingLength]);
 
     return (

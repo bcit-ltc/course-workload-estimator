@@ -29,6 +29,14 @@ export default function CustomAssignmentCalculator(props) {
 
         props.update_a_termHours(aTermHours);
         props.updateActivityName(activityName);
+        props.reportInputDetails?.({
+            'Assignment Name (Optional)': activityName,
+            'Custom Assignments per Course': assignmentQuantity,
+            'Preparation Time per Assignment (Hours)': assignmentPrepHours,
+            'Hours per Assignment': assignmentLength,
+            'Post-Activity Reporting Time per Assignment (Hrs)': postAssignmentHours,
+            'Synchronous Time': synchronous,
+        });
     }, [activityName, assignmentQuantity, assignmentPrepHours, assignmentLength, postAssignmentHours, synchronous]);
 
     return (

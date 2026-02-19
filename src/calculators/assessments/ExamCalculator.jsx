@@ -47,6 +47,14 @@ export default function ExamCalculator(props) {
         props.update_a_termHours(aTermHours);
         props.updateActivityName(activityName);
 
+        props.reportInputDetails?.({
+            'Exam Name (Optional)': activityName,
+            'Exam per Term': examQuantity,
+            'Duration per Exam (Hours)': examDuration,
+            'Study Hours per Exam': studyLength,
+            'Format': format,
+            'Final Exam is': isAdditional ? 'Additional to number of weeks/term' : 'Included within number of weeks/term',
+        });
     }, [activityName, examQuantity, examDuration, studyLength, format, isAdditional]);
 
     return (

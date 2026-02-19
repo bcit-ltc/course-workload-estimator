@@ -27,6 +27,14 @@ export default function QuizCalculator(props) {
 
         props.updateActivityName(activityName);
 
+        const details = {
+            'Quiz/Test Name (Optional)': activityName,
+            'Quiz/Test per Term': quizQuantity,
+            'Study Hours per Quiz/Test': studyLength,
+            'Format': format,
+        };
+        if (format === 'async') details['Duration per Quiz/Test (minutes)'] = quizDuration;
+        props.reportInputDetails?.(details);
     }, [activityName, quizQuantity, studyLength, format, quizDuration]);
 
     return (

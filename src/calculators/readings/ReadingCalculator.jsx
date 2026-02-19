@@ -86,6 +86,17 @@ export default function ReadingCalculator(props) {
             props.update_a_weeklyHours(totalWeeklyHours);
         }
         props.updateActivityName(activityName);
+        const details = {
+            'Activity Name (Optional)': activityName,
+            'Pages per Week': pagesPerWeek,
+            'Pages Density': pagesDensity,
+            'Difficulty': difficulty,
+            'Purpose': purpose,
+            'Adjust Manually': manualAdjust,
+            'Synchronous Time': synchronous,
+        };
+        if (manualAdjust) details['Pages Read per Hour'] = manualPagesPerHour;
+        props.reportInputDetails?.(details);
     }, [activityName, pagesPerWeek, pagesDensity, difficulty, purpose, manualAdjust, manualPagesPerHour, synchronous]);
 
     return (

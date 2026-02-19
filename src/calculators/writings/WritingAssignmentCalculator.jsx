@@ -72,6 +72,18 @@ export default function WritingAssignmentCalculator(props) {
 
         props.updateActivityName(activityName);
 
+        const details = {
+            'Assignment Name (Optional)': activityName,
+            'Number of Assignment': assigmentQuantity,
+            'Pages per Assignment': assignmentPages,
+            'Pages Density': pagesDensity,
+            'Type of Writing Assignment': type,
+            'Drafting': drafting,
+            'Adjust Manually': manualAdjust,
+            'Synchronous Time': synchronous,
+        };
+        if (manualAdjust) details['Pages Read per Hour'] = manualPagesPerHour;
+        props.reportInputDetails?.(details);
     }, [activityName, assigmentQuantity, assignmentPages, pagesDensity, type, drafting, manualAdjust, manualPagesPerHour, synchronous]);
 
     return (

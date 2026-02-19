@@ -19,6 +19,12 @@ export default function ClinicalCalculator(props) {
         props.update_s_termHours(sTermHours);
         props.update_a_termHours(aTermHours);
         props.updateActivityName(activityName);
+        props.reportInputDetails?.({
+            'Activity Name (Optional)': activityName,
+            'Number of Scheduled Weeks': weeksQuantity,
+            'Number of Scheduled hours per Day': hoursPerDay,
+            'Post-Activity Reporting Time per Week (Hrs)': postActivityHours,
+        });
     }, [activityName, weeksQuantity, hoursPerDay, postActivityHours]);
 
     return (

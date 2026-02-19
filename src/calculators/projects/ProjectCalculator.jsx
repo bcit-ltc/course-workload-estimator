@@ -32,6 +32,15 @@ export default function ProjectCalculator(props) {
         }
 
         props.updateActivityName(activityName);
+        const details = {
+            'Project Name (Optional)': activityName,
+            'Number of Weeks per Project': weeksPerProject,
+            'Project Size': projectSize,
+            'Adjust Manually': manualAdjust,
+            'Synchronous Time': synchronous,
+        };
+        if (manualAdjust) details['Hours per Week'] = manualPagesPerHour;
+        props.reportInputDetails?.(details);
     }, [activityName, weeksPerProject, projectSize, manualAdjust, manualPagesPerHour, synchronous]);
 
     return (

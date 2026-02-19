@@ -3,6 +3,7 @@ import FormGroup from '@mui/material/FormGroup';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import createActivityString from '../helpers/createActivityString';
+import components from '../helpers/components';
 import MeetingCalculator from '../calculators/meetings/MeetingCalculator';
 import LabsCalculator from '../calculators/practices/LabsCalculator';
 import ClinicalCalculator from '../calculators/practices/ClinicalCalculator';
@@ -23,12 +24,14 @@ export default function CourseActivity(props) {
     const [s_termHours, set_s_termHours] = useState(0);
     const [a_weeklyHours, set_a_weeklyHours] = useState(0);
     const [a_termHours, set_a_termHours] = useState(0);
+    const [activityInputDetails, setActivityInputDetails] = useState({});
     const activityProps = {
         ...{ updateActivityName: setActivityName },
         ...{ update_s_weeklyHours: set_s_weeklyHours },
         ...{ update_s_termHours: set_s_termHours },
         ...{ update_a_weeklyHours: set_a_weeklyHours },
-        ...{ update_a_termHours: set_a_termHours }
+        ...{ update_a_termHours: set_a_termHours },
+        ...{ reportInputDetails: setActivityInputDetails },
     };
 
     const renderCalculator = () => {
@@ -94,7 +97,26 @@ export default function CourseActivity(props) {
         try {
             let newActivityString = createActivityString(props.componentIndex, props.activityIndex, activityName, s_weeklyHours, s_termHours, a_weeklyHours, a_termHours);
             await props.updateSummary(newActivityString);
-    
+
+            if (typeof window !== 'undefined' && window.plausible) {
+                const componentKeys = Object.keys(components);
+                const component = componentKeys[props.componentIndex] || 'Unknown';
+                const activity = components[component]?.[props.activityIndex] || 'Unknown';
+                const propsToSend = {
+                    component,
+                    activity,
+                    activity_name: activityName || 'Unnamed',
+                    hours_sync_weekly: String(s_weeklyHours),
+                    hours_sync_term: String(s_termHours),
+                    hours_async_weekly: String(a_weeklyHours),
+                    hours_async_term: String(a_termHours),
+                };
+                if (Object.keys(activityInputDetails).length > 0) {
+                    propsToSend.inputs = JSON.stringify(activityInputDetails);
+                }
+                window.plausible('Activity Added', { props: propsToSend });
+                console.log('Activity Added (Plausible sent):', { event: 'Activity Added', props: propsToSend, inputDetails: activityInputDetails });
+            }
         } catch (error) {
             console.error("Error in addActivity", error);
         }

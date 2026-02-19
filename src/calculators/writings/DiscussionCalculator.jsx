@@ -32,6 +32,17 @@ export default function DiscussionCalculator(props) {
         props.update_a_termHours(totalTermHours);
         props.updateActivityName(activityName);
 
+        const details = {
+            'Discussion Name (Optional)': activityName,
+            'Number of Discussions per Course': discussionQuantity,
+            'Original Posts': postQuantity,
+            'Average Post Length (words)': avgPostLength,
+            'Responses': responseQuantity,
+            'Average Response Length (words)': avgResponseLength,
+            'Adjust Manually': manualAdjust,
+        };
+        if (manualAdjust) details['Hours per discussion'] = manualDiscussionPerHour;
+        props.reportInputDetails?.(details);
     }, [activityName, discussionQuantity, postQuantity, avgPostLength, responseQuantity, avgResponseLength, manualAdjust, manualDiscussionPerHour]);
 
     return (
