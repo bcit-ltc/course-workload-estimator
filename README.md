@@ -17,7 +17,7 @@ Use the build files from `/dist`.
 
 ## License
 
-Mozilla Public License 2.0
+Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International Public License
 
 ## About
 
