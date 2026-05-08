@@ -1,5 +1,5 @@
 <!-- SPDX-License-Identifier: MPL-2.0 -->
-# 🧊 This project has been migrated to [bcit-tlu/course-workload-estimator](https://github.com/bcit-tlu/course-workload-estimator). 🧊
+# 🧊 This project has been migrated to [bcit-tlu/course-workload-estimator](https://github.com/bcit-tlu/course-workload-estimator).
 
 The code remains available for historic purposes.
 
