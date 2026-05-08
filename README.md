@@ -1,4 +1,10 @@
 <!-- SPDX-License-Identifier: MPL-2.0 -->
+# 🧊 This project has been migrated to [bcit-tlu/course-workload-estimator](https://github.com/bcit-tlu/course-workload-estimator). 🧊
+
+The code remains available for historic purposes.
+
+---
+
 # Course Workload Estimator
 
 A time calculator to estimate the number of hours of work learners might be expected to spend completing coursework.
